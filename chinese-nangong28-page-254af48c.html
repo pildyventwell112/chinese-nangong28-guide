@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>南宫28 · 生活与社区的温度</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f5f3f0;
+      color: #1f1e1c;
+      line-height: 1.6;
+    }
+
+    /* 深色 hero 头图 */
+    .hero {
+      background: #0d0c0a;
+      color: #eae6df;
+      padding: 5rem 1.5rem 3.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      left: -20%;
+      width: 140%;
+      height: 140%;
+      background: radial-gradient(circle at 30% 40%, rgba(180, 130, 80, 0.08), transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero .tagline {
+      font-size: 1.1rem;
+      opacity: 0.75;
+      max-width: 680px;
+      margin: 0 auto 0.6rem;
+      position: relative;
+      z-index: 1;
+      font-weight: 300;
+    }
+
+    .hero .subnote {
+      font-size: 0.9rem;
+      opacity: 0.55;
+      font-style: italic;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* 浅色正文区 */
+    .content {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 2.5rem;
+      background: #faf9f7;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section:last-of-type {
+      margin-bottom: 1.8rem;
+    }
+
+    .section h2 {
+      font-size: 1.6rem;
+      font-weight: 480;
+      color: #2c2a27;
+      margin-bottom: 1rem;
+      border-left: 4px solid #b8854a;
+      padding-left: 1rem;
+    }
+
+    .section p {
+      margin-bottom: 1.1rem;
+      color: #3b3936;
+    }
+
+    .highlight-link {
+      color: #b3743c;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    .highlight-link:hover {
+      color: #8a5e2f;
+      border-bottom: 1px solid #b8854a;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 1.8rem 0 1.2rem;
+    }
+
+    .card {
+      flex: 1 1 240px;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 1.6rem 1.4rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      border: 1px solid #eae5de;
+      transition: transform 0.15s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+      color: #2a2723;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #4f4b46;
+    }
+
+    .faq-item {
+      background: #f0ede8;
+      padding: 0.9rem 1.2rem;
+      border-radius: 12px;
+      margin-bottom: 0.8rem;
+    }
+
+    .faq-item strong {
+      display: block;
+      margin-bottom: 0.2rem;
+      color: #1f1c18;
+      font-weight: 500;
+    }
+
+    .faq-item span {
+      font-size: 0.95rem;
+      color: #4d4943;
+    }
+
+    .footer-note {
+      background: #e6e1d9;
+      padding: 2.2rem 1.5rem 2rem;
+      text-align: center;
+    }
+
+    .footer-note p {
+      font-size: 0.95rem;
+      color: #3b3732;
+      max-width: 600px;
+      margin: 0 auto 0.4rem;
+    }
+
+    .footer-note a {
+      color: #7a5f3f;
+    }
+
+    .footer-note a:hover {
+      text-decoration: underline;
+    }
+
+    /* 响应式细节 */
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero {
+        padding: 3.2rem 1rem 2.8rem;
+      }
+
+      .content {
+        padding: 2rem 1rem;
+      }
+
+      .card {
+        flex: 1 1 100%;
+      }
+
+      .section h2 {
+        font-size: 1.35rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero h1 {
+        font-size: 3rem;
+      }
+
+      .content {
+        padding: 3.8rem 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 首页横幅 hero -->
+  <div class="hero">
+    <h1>南宫28 · 角落里的归属</h1>
+    <p class="tagline">一个让人放松下来的社区空间，聊得来比什么都重要。</p>
+    <p class="subnote">不谈宏大叙事，只讲真实连接</p>
+  </div>
+
+  <!-- 浅色正文区 -->
+  <div class="content">
+
+    <!-- 背景说明: 从主题切入 -->
+    <div class="section">
+      <h2>从一块砖说起</h2>
+      <p>很多人在网上找的是一种“附近感”——不太远，不太近，刚刚好能看见别人的日常。这就是 <a href="https://chinese-nangong28.com" class="highlight-link">南宫28</a> 最初的样子。没有复杂的规则，没有刺眼的推送，只有一群愿意坐下来聊聊的人。</p>
+      <p>它的背景并不神秘：一个由用户自发维护的小生态，话题从读书、电影到家常菜、养猫心得，覆盖得很散，却意外地有温度。你不必成为某个领域的专家，也不必刻意找话题——像路过街角熟识的茶馆，随时可以坐下。</p>
+    </div>
+
+    <!-- 三段自然介绍: 特点+场景+日常 -->
+    <div class="section">
+      <h2>它长什么样？</h2>
+      <p>打开页面，你不会看到铺天盖地的弹窗或排行榜。南宫28更偏向一种安静、克制的风格。信息流靠时间排序，没有算法替你决定该看什么。你可以随时翻到三天前的一个有趣讨论，也不会觉得过期。</p>
+
+      <div class="card-grid">
+        <div class="card">
+          <h3>话题像朋友聊天</h3>
+          <p>从“今天午饭做了啥”到“最近在看什么剧”，没有人嫌弃话题太小。这里不用端着，也不用担心冷场。</p>
+        </div>
+        <div class="card">
+          <h3>没有用户等级</h3>
+          <p>不设积分、排行榜、会员皮肤。新人和老面孔在发言上没有区别，唯一的权重来自你说了什么。</p>
+        </div>
+        <div class="card">
+          <h3>自由但有序</h3>
+          <p>版规简单，执行透明。管理员大多是社区里的普通用户，用投票和处理记录说话，不搞一言堂。</p>
+        </div>
+      </div>
+
+      <p>这种氛围也吸引了不少创作者——有人在这里连载自己的旅行随笔，有人把摄影作业发上来求建议，还有人单纯为了记录每天的日落。没有人会指责你“发错地方了”，因为这里本来就没有严格的边界。</p>
+    </div>
+
+    <!-- 第三段: 场景与感受 -->
+    <div class="section">
+      <h2>适合什么时候逛？</h2>
+      <p>午休时的十分钟，睡前翻几页，或者周末午后泡杯茶慢慢刷。南宫28不追求“日活”和“停留时长”，它更像一本可以共同书写的日记。你在上面看到的大多数内容，都没有精心包装的标题，但读起来反而真实。</p>
+      <p>如果你厌倦了那些充斥着热搜和广告的社区，不妨给自己换个频道。在这里，一个关于“怎么修老式台灯”的帖子下面可能有二十条认真回复，而发帖人可能只是一名退休电工。这种默契，在别处不太常见。</p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="section" style="margin-bottom: 0.8rem;">
+      <h2>一些常见疑问</h2>
+      <div class="faq-item">
+        <strong>需要注册才能看内容吗？</strong>
+        <span>大部分内容对访客开放，但参与讨论需要一个简单的账号。注册流程很轻，不需要手机号。</span>
+      </div>
+      <div class="faq-item">
+        <strong>有 App 吗？</strong>
+        <span>目前以网页版为主，移动端适配做得不错，在浏览器里直接使用体验和原生差别不大。</span>
+      </div>
+      <div class="faq-item">
+        <strong>社区氛围怎么样？</strong>
+        <span>整体偏向温和、互助。当然任何地方都有小摩擦，但南宫28的成员更倾向于先沟通，而不是举报或拉黑。</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 页尾访问提示 -->
+  <div class="footer-note">
+    <p>如果你在找一个能慢慢说话的地方，可以试试 <a href="https://chinese-nangong28.com" style="color:#7a5f3f; text-decoration: underline;">南宫28</a>。它不大，但够安静。</p>
+    <p style="font-size:0.85rem; opacity:0.6; margin-top:0.5rem;">每天都有新的话题，每天都有旧的故事。</p>
+  </div>
+
+</body>
+</html>
